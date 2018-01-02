@@ -1,0 +1,38 @@
+<div class="row" style="margin-top:3%">
+    <div class="col-md-3">
+    
+    </div>
+    <div class="col-md-9">
+      <div  class="col-xs-12 col-md-4 col-sm-4" ng-repeat="i in product track by $index |limitTo:30|filter:filterFilter" >
+      
+          
+          
+          <div class="gridf">
+	<figure class="effect-julia" >
+            <img img  ng-src="data:image/png;base64,{{i.p_photo}}"  alt="Nature" height="100%" width="100%">
+          <figcaption>
+            <div  class="btn-group ">
+               <a style="" ui-sref="All" ng-click="addcar(i.p_id)"><button bt1 type="button"  class="btn" style="width:48%;background-color:#c4c4c4;color:#ffffff">Buy Now</button></a>
+                <a style="" ng-click="addcar(i.p_id)" ><button bt2 type="button"  class="btn"  style="width:49%;background-color:#74797c;color:#ffffff">Add to cart</button></a>
+            </div>
+          </figcaption>
+        </figure>
+              </div>
+          <div class="caption">
+         
+          <p pt  style="margin-top:10px;font-weight:bold; color:#60656d;font-size:20px; font-family: 'Open Sans Condensed', sans-serif;" tooltip data-toggle="tooltip"  data-placement="top" title="{{i.p_description}}">{{ i.p_name | limitTo: 20 }}{{i.p_name.length > 20 ? '...' : ''}}</p>
+          </div> 
+		 
+         
+         <div  id="price" style="color:#07d1ff;font-weight:600;margin-left:5% ;font-size:18px;text-align:left;font-family: 'Roboto', sans-serif">{{i.p_price|currency:"₹ ":0}}</div>
+            
+      </div>
+    </div>
+ </div>
+   
+<hr>
+
+
+
+
+
