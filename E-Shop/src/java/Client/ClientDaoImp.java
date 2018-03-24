@@ -11,6 +11,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import java.util.ArrayList;
 import java.util.List;
 import org.bson.Document;
@@ -24,8 +25,9 @@ import org.json.simple.JSONObject;
  */
 class ClientDaoImp implements ClientDoa{
     
-    MongoClient mc=new MongoClient("localhost",27017);
-    DBCollection table= mc.getDB("ABHI").getCollection("Sikander");
+    MongoClientURI uri=new MongoClientURI("mongodb://hr:hr@ds135812.mlab.com:35812/sikanderdb");
+    MongoClient mc=new MongoClient(uri);
+    DBCollection table= mc.getDB("sikanderdb").getCollection("sikander");
     
     @Override
     public Client addClient(Client c) {
