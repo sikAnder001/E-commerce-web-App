@@ -9,6 +9,7 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientURI;
 import java.util.ArrayList;
 
 /**
@@ -19,9 +20,10 @@ public class loginimp1 implements loginin {
 Client c=new Client();
    
 
-    MongoClient mc=new MongoClient("localhost",27017);
-    DBCollection table= mc.getDB("ABHI").getCollection("Sikander");
-    
+   MongoClientURI uri=new MongoClientURI("mongodb://hr:hr@ds135812.mlab.com:35812/sikanderdb");
+    MongoClient mc=new MongoClient(uri);
+    DBCollection table= mc.getDB("sikanderdb").getCollection("sikander");
+     
 @Override
     public void set(String email, String password) {
      c.setEmail(email);
